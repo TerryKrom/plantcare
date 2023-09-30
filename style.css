@@ -210,6 +210,12 @@ body{
     width: 35%;
 }
 
+@media only screen and (max-width: 560px){
+    .modal-content{
+        width: 90% !important;
+    }
+}
+
 .modal-content-menu{
     background-color: #fff;
     width: 200px;
