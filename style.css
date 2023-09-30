@@ -76,7 +76,7 @@ body{
         height: 25px;
     }
     .add-plant{
-        font-size: 0.7rem !important;
+        font-size: 0.9rem !important;
     }
     #alt-text{
         font-size: 1.2rem;
@@ -222,6 +222,10 @@ body{
     }
     .modal-plant-content{
         width: 90% !important;
+    }
+    .container{
+        width: 90%;
+        height: 90vh;
     }
 }
 
@@ -419,6 +423,23 @@ iframe{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+@media only screen and (max-width: 560px){
+    .header-list{
+        height: 150px;
+        flex-wrap: wrap;
+    }
+    .add-plant{
+        width: 175px !important;
+    }
+    .btns{
+        margin: 0px 10px;
+    }
+    .header-list .label{
+        margin: 10px;
+        width: 100%;
+    }
 }
 .btns{
     display: flex;
