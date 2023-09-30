@@ -214,6 +214,9 @@ body{
     .modal-content{
         width: 90% !important;
     }
+    .modal-plant-content{
+        width: 90% !important;
+    }
 }
 
 .modal-content-menu{
