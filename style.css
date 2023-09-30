@@ -431,13 +431,13 @@ iframe{
         flex-wrap: wrap;
     }
     .add-plant{
-        width: 175px !important;
+        width: 60vw !important;
     }
     .btns{
-        margin: 0px 10px;
+        margin: 0px 15px;
     }
     .header-list .label{
-        margin: 10px;
+        margin: 15px;
         width: 100%;
     }
 }
