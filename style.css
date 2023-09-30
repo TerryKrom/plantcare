@@ -55,7 +55,7 @@ body{
     width: 50px;
     height: 35px;
 }
-
+/* 
 .rotation{
     animation: animation-rotate 0.2s linear;
 }
@@ -67,7 +67,7 @@ body{
     100%{
         transform: rotate(90deg);
     }
-}
+} */
 
 
 @media only screen and (max-width: 560px){
