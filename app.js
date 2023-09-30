@@ -238,3 +238,9 @@ const turnMusic = (e) => {
 
 toogleLeaves.addEventListener('change', showLeaves);
 toggleMusic.addEventListener('change', turnMusic);
+
+let refreshBtn = document.querySelector('.refresh-btn')
+
+refreshBtn.addEventListener("click", function() {
+  window.location.reload();
+})

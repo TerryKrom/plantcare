@@ -420,6 +420,11 @@ iframe{
     align-items: center;
     width: 100%;
 }
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .dashboard{
     margin: 20px;
@@ -705,4 +710,21 @@ iframe{
     display: block;
     background-color: #97bd91;
     height: 3px;
+}
+
+.refresh-btn{
+    height: 50px;
+    width: 60px;
+    background-color: #bdecb6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.refresh-btn:hover{
+    background-color: #97bd91;
+}
+
+.refresh-btn svg{
+    width: 26px;
+    height: 26px;
 }
