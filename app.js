@@ -9,7 +9,7 @@ let modal = document.getElementById("modal");
 let deleteModal = document.getElementById('delete-modal');
 let menuModal = document.getElementById('menu-options');
 let plantModal = document.getElementById('plant-modal');
-
+let menuModalContent = document.querySelector('.modal-content-menu')
 document.addEventListener('DOMContentLoaded', function(){
   if(savedPlants.length == 0){
     altText.style.display='block';
@@ -27,7 +27,7 @@ const openModal = () => {
 };
 
 const openMenuModal = () => {
-  menuModal.style.animation='appearRight 0.3s linear';
+  menuModalContent.style.animation='appearRight 0.3s linear';
   menuModal.style.display = 'block'
 }
 
