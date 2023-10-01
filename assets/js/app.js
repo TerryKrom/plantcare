@@ -47,7 +47,7 @@ const openDeleteModal = (index) => {
           removePlant(index);
           setTimeout(() => {
             window.location.reload();
-          },500)
+          },100)
           clearTimeout()
         });
       }
@@ -107,7 +107,7 @@ const saveData = () => {
     closeModal();
     setTimeout(() => {
       window.location.reload();
-    },500)
+    },100)
     clearTimeout()
   }
 };
@@ -189,12 +189,17 @@ gearIcon.addEventListener('click', function() {
 let toogleLeaves = document.getElementById('toggle-leaves');
 let leaves = document.getElementById('leaves');
 let toggleMusic = document.getElementById('toggle-music');
+let toggleBg = document.getElementById('toggle-bg');
+
 
 // Carregar preferências do localStorage ao carregar a página
 document.addEventListener('DOMContentLoaded', function(){
   let leavesPreference = localStorage.getItem('leavesPreference');
   let musicPreference = localStorage.getItem('musicPreference');
+  let bgPreference = localStorage.getItem('bgPreference');
+
   playVideo()
+
   if (leavesPreference === 'visible') {
     toogleLeaves.checked = true;
     leaves.style.display = 'flex';
@@ -210,6 +215,14 @@ document.addEventListener('DOMContentLoaded', function(){
     toggleMusic.checked = false;
     pauseVideo();
   }
+
+  if(bgPreference === 'on'){
+    toggleBg.checked = true;
+    document.body.classList.toggle('bg-remove')
+  }else{
+    toggleBg.checked = false;
+  }
+
 });
 
 const showLeaves = (e) => {
@@ -219,6 +232,16 @@ const showLeaves = (e) => {
   } else {
     leaves.style.display='none';
     localStorage.setItem('leavesPreference', 'hidden');
+  }
+}
+
+const toggleBackground = (e) => {
+  if(e.target.checked){
+    document.body.classList.toggle('bg-remove');
+    localStorage.setItem('bgPreference', 'on');
+  }else{
+    document.body.classList.remove('bg-remove');
+    localStorage.setItem('bgPreference', 'off');
   }
 }
 
@@ -248,6 +271,10 @@ const turnMusic = (e) => {
 
 toogleLeaves.addEventListener('change', showLeaves);
 toggleMusic.addEventListener('change', turnMusic);
+toggleBg.addEventListener('change', toggleBackground);
+
+
+
 
 let refreshBtn = document.querySelector('.refresh-btn')
 

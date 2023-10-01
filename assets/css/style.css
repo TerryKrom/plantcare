@@ -21,7 +21,11 @@
 body{
     background: url('../bg-nature.jpg') top center no-repeat;
     overflow: hidden;
-}  
+}
+
+body.bg-remove{
+    background: var(--darker-color);
+}
 
 .container{
     width: 75%;
@@ -303,7 +307,7 @@ body{
     background-color: var(--lighter-color);
 }
 .modal-menu-header h2{
-    width: 63%;
+    width: 60%;
     display: flex;
     align-items: center;
     color: var(--dark-font);
@@ -317,6 +321,7 @@ body{
     width: 30px;
     height: 30px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .modal-content-menu div{
@@ -402,6 +407,9 @@ body{
     font-size: 1rem;
 }
 
+.modal-content select:focus{
+    outline: 0;
+}
 .modal-content input[type="text"]{
     border-radius: 5px;
     border: 2px solid var(--darker-color);
