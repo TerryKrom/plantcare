@@ -354,7 +354,7 @@ body{
 
 @media only screen and (max-width:560px){
     .modal-content input[type="text"], .modal-content select{
-        width: auto !important;
+        width: 18.5rem !important;
     }
 }
 
