@@ -12,8 +12,10 @@
     --primary-color: #a7d6a0;
     --medium-color: #97bd91;
     --darker-color: #6e9169;
+    --dark-green: #32582c;
     --lighter-color: #d0ebcc;
     --mint-green: #137A63;
+    --dark-font: #183314;
 }
 
 body{
@@ -40,6 +42,9 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background-color: var(--lighter-color);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .logo{
@@ -55,7 +60,8 @@ body{
 }
 .logo h2{
     font-weight: 500;
-    color: var(--darker-color);
+    color: var(--dark-font);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1.752);
 }
 .menu div{
     margin: 0px 10px 0px 10px;
@@ -64,7 +70,7 @@ body{
 .options svg{
     width: 50px;
     height: 35px;
-    color: #708b6c;
+    color: var(--dark-font);
 }
 
 .rotation{
@@ -153,6 +159,7 @@ body{
         margin: 10px 0px 20px 0px;
     }
 }
+
 #alt-text{
     font-weight: 500;
     margin-top: 50px;
@@ -165,6 +172,7 @@ body{
 .label p{
     margin-bottom: 5px;
     font-size: 1.2rem;
+    color: var(--dark-font);
 }
 
 .add-plant, .options svg{
@@ -176,6 +184,8 @@ body{
     height: 50px;
     background-color: var(--primary-color);
     border-radius: 5px;
+    border: 2px solid var(--dark-green);
+    color: var(--dark-font);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -186,15 +196,18 @@ body{
     margin: 10px;
     width: 25px;
     height: 25px;
+    color: var(--dark-font);
 }
+
 .add-plant p{
     margin: 10px 0px 10px 20px;
 }
-.add-plant:hover, .btn-modal:hover, .dashboard:hover{
+.add-plant:hover, .btn-modal:hover{
     background-color: var(--medium-color);
 }
+
 .line{
-    background-color: var(--medium-color);
+    background-color: var(--darker-color);
     width: 75%;
     height: 3px;
     border-radius: 3px;
@@ -232,20 +245,27 @@ body{
 }
 
 .modal-content{
-    height: 350px;
-    width: 35%;
+    height: 50%;
+    width: 65%;
 }
 
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 600px){
     .modal-content{
-        width: 90% !important;
+        width: 85% !important;
     }
     .modal-plant-content{
-        width: 90% !important;
+        width: 85% !important;
     }
     .container{
         width: 90%;
         height: 90vh;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .modal-content{
+        width: 35% !important;
+        height: 50%;
     }
 }
 
@@ -338,7 +358,7 @@ body{
     border-radius: 5px;
     border: 2px solid var(--darker-color);
     height: 2.4rem;
-    width: 30rem;
+    width: 100%;
     font-size: 1rem;
 }
 
@@ -346,7 +366,6 @@ body{
     border-radius: 5px;
     border: 2px solid var(--darker-color);
     height: 2.4rem;
-    width: 30rem;
     margin-top: 5px;
     text-indent: 5px;
     font-size: 1rem;
@@ -776,6 +795,7 @@ iframe{
     background-color: var(--primary-color);
     border-radius: 5px;
     cursor: pointer;
+    border: 2px solid var(--dark-green);
 }
 
 .refresh-btn:hover{
@@ -785,4 +805,5 @@ iframe{
 .refresh-btn svg{
     width: 26px;
     height: 26px;
+    color: var(--dark-font);
 }
