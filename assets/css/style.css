@@ -17,7 +17,7 @@
 }
 
 body{
-    background: url('bg-nature.jpg') top center no-repeat;
+    background: url('../bg-nature.jpg') top center no-repeat;
     overflow: hidden;
 }  
 

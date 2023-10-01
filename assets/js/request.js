@@ -1,6 +1,6 @@
 const getInfo = async (type) => {
     try {
-        const wikiData = (await import('./wiki.mjs'));
+        const wikiData = (await import('../js/wiki.mjs'));
         
         // Access the object corresponding to the type
         const plantData = wikiData[type];
