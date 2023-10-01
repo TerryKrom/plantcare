@@ -7,7 +7,7 @@ const createObject = (icon, commonTypes, description, basicCare) => {
     }
 }
 const flower = createObject(
-    '../assets/icons/flower.png',
+    '../icons/flower.png',
     ['Orchid', 'Rose', 'Daisy', 'Sunflower'],
     'A beautiful type of plant!',
     'Flowers require regular watering, typically once a week. They thrive in bright, indirect sunlight and prefer moderate humidity. Fertilize them during the growing season for best results.'
