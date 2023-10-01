@@ -129,8 +129,9 @@ body.bg-remove{
     justify-content: end;
     align-items: center;
     position: relative;
-    width: 50%;
     height: 100%;
+    background-color: transparent;
+    border: none;
 }
 
 /* Mostrar o menu quando o ícone gear for clicado
