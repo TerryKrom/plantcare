@@ -9,7 +9,9 @@ let modal = document.getElementById("modal");
 let deleteModal = document.getElementById('delete-modal');
 let menuModal = document.getElementById('menu-options');
 let plantModal = document.getElementById('plant-modal');
-let menuModalContent = document.querySelector('.modal-content-menu')
+let menuModalContent = document.querySelector('.modal-content-menu');
+
+
 document.addEventListener('DOMContentLoaded', function(){
   if(savedPlants.length == 0){
     altText.style.display='block';
@@ -33,7 +35,7 @@ const openMenuModal = () => {
 
 const openDeleteModal = (index) => {
   try {
-    if (index >= 0 && index < plantsList.children.length) {
+    if (index >= 0 && index <= plantsList.children.length) {
       let name = plantsList.children[index].querySelector('.name-p').textContent;
       labelPlant.innerHTML = name;
       if (deleteModal) {
@@ -43,6 +45,9 @@ const openDeleteModal = (index) => {
         removeBtn.addEventListener('click', function () {
           closeDeleteModal();
           removePlant(index);
+          setTimeout(() => {
+            window.location.reload();
+          },500)
         });
       }
     } else {
