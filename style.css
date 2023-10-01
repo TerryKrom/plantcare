@@ -8,6 +8,14 @@
     font-family: "Outfit", sans-serif;
 }
 
+:root{
+    --primary-color: #a7d6a0;
+    --medium-color: #97bd91;
+    --darker-color: #6e9169;
+    --lighter-color: #d0ebcc;
+    --mint-green: #137A63;
+}
+
 body{
     background: url('bg-nature.jpg') top center no-repeat;
     overflow: hidden;
@@ -100,7 +108,7 @@ body{
 }
 
 #menu-options a:hover{
-    background-color: #97bd91;
+    background-color: var(--medium-color);
 }
 
 .options {
@@ -130,9 +138,18 @@ body{
 }
 
 .central-logo{
-    width: 23%;
+    width: 30%;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
 }
 
+@media only screen and (min-width: 600px){
+    .central-logo{
+        width: 20%;
+        margin: 10px 0px 20px 0px;
+    }
+}
 #alt-text{
     font-weight: 500;
     margin-top: 50px;
@@ -154,7 +171,7 @@ body{
 .add-plant{
     width: 200px;
     height: 50px;
-    background-color: #bdecb6;
+    background-color: var(--primary-color);
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -171,10 +188,10 @@ body{
     margin: 10px 0px 10px 20px;
 }
 .add-plant:hover, .btn-modal:hover, .dashboard:hover{
-    background-color: #97bd91;
+    background-color: var(--medium-color);
 }
 .line{
-    background-color: #97bd91;
+    background-color: var(--medium-color);
     width: 75%;
     height: 3px;
     border-radius: 3px;
@@ -329,7 +346,7 @@ body{
 }
 
 .btn-modal, #remove-btn{
-    background-color: #bdecb6;
+    background-color: var(--primary-color);
     width: 30%;
     margin-bottom: 20px;
     height: 35px;
@@ -346,6 +363,8 @@ body{
     max-height: 380px;
     border-radius: 20px;
     min-height: 300px;
+    background-color: var(--lighter-color);
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.175);
 }
 
 /* Ocultando a scrollbar do webkit */
@@ -358,7 +377,7 @@ body{
 }
 
 .plants-list::-webkit-scrollbar-thumb {
-  background-color: #97bd91; /* Cor da thumb (parte preenchida) */
+  background-color: var(--medium-color); /* Cor da thumb (parte preenchida) */
   border-radius: 1em; /* Arredondar a borda da thumb */
 }
 
@@ -378,7 +397,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #bdecb6;
+    background-color: var(--primary-color);
     text-indent: 10px;
     margin: 3px;
     border-radius: 5px;
@@ -415,7 +434,8 @@ iframe{
 
 
 #label-plant{
-    color: #6e9169;
+    color: var(--darker-color);
+    text-transform: capitalize;
 }
 
 .header-list{
@@ -450,7 +470,7 @@ iframe{
 .dashboard{
     margin: 20px;
     text-decoration: none;
-    background-color: #bdecb6;
+    background-color: var(--primary-color);
     width: 30%;
     color: #000;
     display: flex;
@@ -649,7 +669,7 @@ iframe{
   
   /* Estilo quando o switch está ligado */
   input:checked + .slider {
-    background-color: #97bd91;
+    background-color: var(--medium-color);
   }
   
   input:checked + .slider:before {
@@ -729,20 +749,20 @@ iframe{
 .basic-care-container h2::after,.description-container h2::after, .container-types h2::after{
     content: "";
     display: block;
-    background-color: #97bd91;
+    background-color: var(--medium-color);
     height: 3px;
 }
 
 .refresh-btn{
     height: 50px;
     width: 60px;
-    background-color: #bdecb6;
+    background-color: var(--primary-color);
     border-radius: 5px;
     cursor: pointer;
 }
 
 .refresh-btn:hover{
-    background-color: #97bd91;
+    background-color: var(--medium-color);
 }
 
 .refresh-btn svg{
