@@ -48,6 +48,7 @@ const openDeleteModal = (index) => {
           setTimeout(() => {
             window.location.reload();
           },500)
+          clearTimeout()
         });
       }
     } else {
@@ -104,6 +105,10 @@ const saveData = () => {
     };
     createPlant(plant);
     closeModal();
+    setTimeout(() => {
+      window.location.reload();
+    },500)
+    clearTimeout()
   }
 };
 

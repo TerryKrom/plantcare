@@ -66,7 +66,7 @@ body{
     height: 35px;
     color: #708b6c;
 }
-/* 
+
 .rotation{
     animation: animation-rotate 0.2s linear;
 }
@@ -76,9 +76,9 @@ body{
         transform: rotate(0deg);
     }
     100%{
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
     }
-} */
+}
 
 
 @media only screen and (max-width: 560px){
@@ -350,6 +350,12 @@ body{
     margin-top: 5px;
     text-indent: 5px;
     font-size: 1rem;
+}
+
+@media only screen and (max-width:560px){
+    .modal-content input[type="text"], .modal-content select{
+        width: auto !important;
+    }
 }
 
 .modal-content input[type="text"]:focus{
