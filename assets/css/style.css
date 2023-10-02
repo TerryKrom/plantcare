@@ -282,7 +282,7 @@ body.bg-remove{
     .container{
         width: 90%;
         height: 90vh;
-        margin: 20px auto !important;
+        margin: 20px auto 20px auto !important;
     }
 }
 
