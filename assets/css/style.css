@@ -20,7 +20,12 @@
 
 body{
     background: url('../bg-nature.jpg') top center no-repeat;
-    overflow: hidden;
+}
+
+@media only screen and (min-width: 600px){
+    body{
+        overflow: hidden;
+    }
 }
 
 body.bg-remove{
@@ -174,10 +179,12 @@ body.bg-remove{
     margin: 20px;
     width: 50%;
 }
+
 .label p{
     margin-bottom: 5px;
     font-size: 1.2rem;
     color: var(--dark-font);
+    margin: 8px 0px 8px 0px;
 }
 
 .add-plant, .options svg{
