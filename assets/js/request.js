@@ -8,21 +8,14 @@ const getInfo = async (type) => {
         if (plantData) {
             let container = document.getElementById('request-content')
             container.textContent=""
+            let modalHeaderImg = document.getElementById('plant-modal-img')
+            modalHeaderImg.src=plantData.icon;
+            modalHeaderImg.alt='Plant icon';
 
-            let header = document.createElement('div');
-            header.classList.add('request-content-header');
+            let titleType = document.getElementById('plant-type')
+            titleType.textContent=type;
 
-            let titleType = createTitle(type)
-
-            let img = document.createElement('img');
-            img.src=plantData.icon;
-            img.alt='Plant icon';
-
-            header.appendChild(titleType);
-            header.appendChild(img);
-
-            container.appendChild(header)
-
+            
             let types = plantData.commonTypes;
             let containerTypes = document.createElement('div');
             let titletest = createTitle("Common plants: ")
@@ -31,6 +24,7 @@ const getInfo = async (type) => {
             containerTypes.classList.add('container-types')
 
             let typesList = document.createElement('div');
+            typesList.classList.add('types-list')
 
             types.forEach(e => {
                 let p = document.createElement('p')
@@ -84,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
         
             let type = e.getAttribute('data-type');
             let formatedType = type.toLowerCase().split(' ').join('')
-            console.log(formatedType)
             
             getInfo(formatedType);
         });
