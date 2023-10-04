@@ -856,11 +856,15 @@ iframe{
     margin: 5px;
     font-weight: normal;
     text-transform: capitalize;
+    font-size: 1.3rem;
 }
 
 #plant-modal-img{
     width: 75px;
-    margin: 0px 10px 0px 10px;
+    margin: 10px 15px 10px 15px;
+    background-color: var(--primary-color);
+    border-radius: 25%;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
 }
 
 #request-content div{
@@ -902,4 +906,22 @@ iframe{
     width: 26px;
     height: 26px;
     color: var(--dark-font);
+}
+
+.modal-plant-center{
+    /* border: 2px solid var(--darker-color); */
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+.modal-plant-content{
+    background-color: var(--primary-color);
 }
