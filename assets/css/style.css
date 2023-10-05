@@ -579,7 +579,7 @@ iframe{
     height: 100%;
     display: none;
     justify-content: space-around;
-    align-items: start;
+    align-items: flex-start;
 }
 
 #leaves i {
@@ -778,7 +778,7 @@ iframe{
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-around;
 }
 
