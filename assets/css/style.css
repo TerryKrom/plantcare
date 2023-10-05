@@ -97,10 +97,10 @@ body.bg-remove{
 
 
 @media only screen and (max-width: 560px){
-    .options svg{
+    /* .options svg{
         width: 40px;
         height: 25px;
-    }
+    } */
     .add-plant{
         font-size: 0.9rem !important;
     }
@@ -581,23 +581,6 @@ iframe{
     align-items: center;
 }
 
-.dashboard{
-    margin: 20px;
-    text-decoration: none;
-    background-color: var(--primary-color);
-    width: 30%;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    height: 30px;
-    border: 2px solid #404040;
-}
-
-
-
-
 /* leaf animations */
 
 #leaves {
@@ -821,10 +804,13 @@ iframe{
 }
 
 .types-list{
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.types-list p{
+    margin: 2px;
 }
 
 .container-types div{
