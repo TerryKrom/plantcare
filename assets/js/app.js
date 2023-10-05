@@ -198,8 +198,6 @@ document.addEventListener('DOMContentLoaded', function(){
   let musicPreference = localStorage.getItem('musicPreference');
   let bgPreference = localStorage.getItem('bgPreference');
 
-  playVideo()
-
   if (leavesPreference === 'visible') {
     toogleLeaves.checked = true;
     leaves.style.display = 'flex';
@@ -207,11 +205,12 @@ document.addEventListener('DOMContentLoaded', function(){
     toogleLeaves.checked = false;
     leaves.style.display = 'none';
   }
-
+  
   if (musicPreference === 'on') {
     toggleMusic.checked = true;
     playVideo();
-  } else {
+  }
+  if(musicPreference === 'off'){
     toggleMusic.checked = false;
     pauseVideo();
   }
