@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&display=swap');
 
 *{
     margin: 0;
@@ -68,7 +68,7 @@ body.bg-remove{
     width: 40px;
 }
 .logo h2{
-    font-weight: 500;
+    font-weight: 400;
     color: var(--dark-font);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.1.752);
 }
@@ -139,12 +139,6 @@ body.bg-remove{
     border: none;
 }
 
-/* Mostrar o menu quando o ícone gear for clicado
-.show-menu.menu-options {
-    display: flex;
-    animation: appearRight 0.3s linear;
-} */
-
 @keyframes appearRight{
     from{
         opacity: 0;
@@ -171,7 +165,7 @@ body.bg-remove{
 }
 
 #alt-text{
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 50px;
 }
 
@@ -431,7 +425,7 @@ body.bg-remove{
 }
 
 .modal-content h2{
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 10px;
 }
 
@@ -510,11 +504,6 @@ body.bg-remove{
 .container-list{
     margin-top: 20px;
 }
-
-/* 
-*{
-    border: 1px solid #000;
-} */ 
 
 .container-list div{
     width: 100%;
