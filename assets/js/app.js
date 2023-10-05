@@ -242,18 +242,15 @@ const toggleBackground = (e) => {
   }
 }
 
+const iframe = document.getElementById('video-player');
+const widget = SC.Widget(iframe);
+
 const playVideo = () => {
-  const iframe = document.getElementById('video-player');
-  if (iframe && iframe.contentWindow && iframe.contentWindow.postMessage) {
-    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-  }
+  widget.play()
 };
 
 const pauseVideo = () => {
-  const iframe = document.getElementById('video-player');
-  if (iframe && iframe.contentWindow && iframe.contentWindow.postMessage) {
-    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-  }
+  widget.pause();
 };
 
 const turnMusic = (e) => {
