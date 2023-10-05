@@ -196,24 +196,21 @@ document.addEventListener('DOMContentLoaded', function () {
   let musicPreference = localStorage.getItem('musicPreference');
   let bgPreference = localStorage.getItem('bgPreference');
   
+
+  if (musicPreference === 'on') {
+    toggleMusic.checked = true;
+    playVideo();
+  } else {
+    toggleMusic.checked = false;
+    pauseVideo();
+  }
+
   if (leavesPreference === 'visible') {
     toogleLeaves.checked = true;
     leaves.style.display = 'flex';
   } else {
     toogleLeaves.checked = false;
     leaves.style.display = 'none';
-  }
-
-  if (musicPreference === 'on') {
-    toggleMusic.checked = true;
-    playVideo();
-  }
-
-  if (musicPreference === 'off') {
-    toggleMusic.checked = false;
-    pauseVideo();
-  }else{
-    pauseVideo();  
   }
 
   if (bgPreference === 'on') {
