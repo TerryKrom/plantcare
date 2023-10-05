@@ -545,27 +545,41 @@ iframe{
     width: 100%;
 }
 
-@media only screen and (max-width: 560px){
+@media only screen and (max-width: 500px){
     .header-list{
         height: 150px;
         flex-wrap: wrap;
     }
     .add-plant{
-        width: 65vw !important;
+        width: 80% !important;
+    }
+    .refresh-btn{
+        width: 20% !important;
     }
     .btns{
-        margin: 0px 15px;
+        margin: 0px 10px;
     }
     .header-list .label{
         margin: 15px;
         width: 100%;
     }
 }
+
 .btns{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 95%;
+    height: auto;
 }
+
+
+@media only screen and (max-width: 460px){
+    .add-plant{
+        margin: 3px !important;
+    }
+}
+
 
 /* leaf animations */
 
