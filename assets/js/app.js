@@ -2,7 +2,6 @@
 let myPlants = [];
 let altText = document.getElementById('alt-text');
 let plantsList = document.querySelector('.container-list');
-let savedPlants = JSON.parse(localStorage.getItem('plants')) || [];
 let labelPlant = document.getElementById('label-plant');
 let plantName = document.getElementById('plant-name');
 let modal = document.getElementById("modal");
@@ -10,26 +9,31 @@ let deleteModal = document.getElementById('delete-modal');
 let menuModal = document.getElementById('menu-options');
 let plantModal = document.getElementById('plant-modal');
 let menuModalContent = document.querySelector('.modal-content-menu');
+let savedPlants = JSON.parse(localStorage.getItem('plants')) || [];
 
 
-document.addEventListener('DOMContentLoaded', function(){
-  if(savedPlants.length == 0){
-    altText.style.display='block';
+const createPlantsList = () => {
+  savedPlants.forEach(element => {
+    createPlant(element)
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (savedPlants.length == 0) {
+    altText.style.display = 'block';
   } else {
-    altText.style.display='none';
-    savedPlants.forEach(element => {
-      createPlant(element)
-    });
+    altText.style.display = 'none';
+    createPlantsList();
   }
 });
 
 const openModal = () => {
-  modal.style.animation='appear 0.3s linear';
+  modal.style.animation = 'appear 0.3s linear';
   modal.style.display = "block";
 };
 
 const openMenuModal = () => {
-  menuModalContent.style.animation='appearRight 0.3s linear';
+  menuModalContent.style.animation = 'appearRight 0.3s linear';
   menuModal.style.display = 'block'
 }
 
@@ -45,10 +49,6 @@ const openDeleteModal = (index) => {
         removeBtn.addEventListener('click', function () {
           closeDeleteModal();
           removePlant(index);
-          setTimeout(() => {
-            window.location.reload();
-          },100)
-          clearTimeout()
         });
       }
     } else {
@@ -81,7 +81,7 @@ const closeModal = () => {
 };
 
 const closeMenuModal = () => {
-  menuModal.style.display='none';
+  menuModal.style.display = 'none';
 }
 
 const closeDeleteModal = () => {
@@ -98,32 +98,30 @@ const saveData = () => {
   var name = document.getElementById("name").value;
   var type = document.getElementById("type").value;
 
-  if(name != '' && type != ''){
+  if (name != '' && type != '') {
     const plant = {
       name: name,
       type: type
     };
     createPlant(plant);
     closeModal();
-    setTimeout(() => {
-      window.location.reload();
-    },100)
-    clearTimeout()
+    reload();
   }
 };
 
 const removePlant = (index) => {
-    myPlants.splice(index - 1, 1);
-    localStorage.setItem('plants', JSON.stringify(myPlants));
-    if (plantsList && plantsList.children[index]) {
-      let toRemove = plantsList.children[index];
-      plantsList.removeChild(toRemove);
-    }
-    if(savedPlants.length == 0){
-      altText.style.display='block';
-    } else {
-      altText.style.display='none';
-    }
+  myPlants.splice(index - 1, 1);
+  localStorage.setItem('plants', JSON.stringify(myPlants));
+  if (plantsList && plantsList.children[index]) {
+    let toRemove = plantsList.children[index];
+    plantsList.removeChild(toRemove);
+    reload();
+  }
+  if (savedPlants.length == 0) {
+    altText.style.display = 'block';
+  } else {
+    altText.style.display = 'none';
+  }
 };
 
 const trashSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
@@ -138,8 +136,8 @@ const upModalSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="1
 const createPlant = (obj) => {
   myPlants.push(obj);
   localStorage.setItem('plants', JSON.stringify(myPlants));
-  if(altText.style.display == 'block'){
-    altText.style.display='none';
+  if (altText.style.display == 'block') {
+    altText.style.display = 'none';
   }
   let name = obj.name;
   let type = obj.type;
@@ -151,17 +149,17 @@ const createPlant = (obj) => {
   span.classList.add('trash-icon');
   span2.classList.add('modal-icon');
 
-  span.addEventListener('click', function() {
+  span.addEventListener('click', function () {
     const index = Array.from(plantsList.children).indexOf(div);
     openDeleteModal(index);
   });
 
-  span2.addEventListener('click', function(){
+  span2.addEventListener('click', function () {
     const index = Array.from(plantsList.children).indexOf(div);
     openPlantModal(index);
   })
 
-  span2.id='openPlantIcon'
+  span2.id = 'openPlantIcon'
   span2.setAttribute("data-type", type)
   span2.innerHTML = upModalSvg;
   span.innerHTML = trashSvg;
@@ -176,13 +174,13 @@ const createPlant = (obj) => {
 const gearIcon = document.getElementById('gear-icon');
 
 // Adicione um evento de clique no ícone gear
-gearIcon.addEventListener('click', function() {
+gearIcon.addEventListener('click', function () {
+  this.classList.toggle('rotation')
+  // Adicione ou remova a classe 'show-menu' para mostrar ou ocultar o menu
+  setTimeout(() => {
+    openMenuModal()
     this.classList.toggle('rotation')
-    // Adicione ou remova a classe 'show-menu' para mostrar ou ocultar o menu
-    setTimeout(() => {
-      openMenuModal()
-      this.classList.toggle('rotation')
-    }, 200);
+  }, 200);
 });
 
 
@@ -193,7 +191,7 @@ let toggleBg = document.getElementById('toggle-bg');
 
 
 // Carregar preferências do localStorage ao carregar a página
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   let leavesPreference = localStorage.getItem('leavesPreference');
   let musicPreference = localStorage.getItem('musicPreference');
   let bgPreference = localStorage.getItem('bgPreference');
@@ -205,40 +203,40 @@ document.addEventListener('DOMContentLoaded', function(){
     toogleLeaves.checked = false;
     leaves.style.display = 'none';
   }
-  
+
   if (musicPreference === 'on') {
     toggleMusic.checked = true;
     playVideo();
   }
-  if(musicPreference === 'off'){
+  if (musicPreference === 'off') {
     toggleMusic.checked = false;
     pauseVideo();
   }
 
-  if(bgPreference === 'on'){
+  if (bgPreference === 'on') {
     toggleBg.checked = true;
     document.body.classList.toggle('bg-remove')
-  }else{
+  } else {
     toggleBg.checked = false;
   }
 
 });
 
 const showLeaves = (e) => {
-  if(e.target.checked){
-    leaves.style.display='flex';
+  if (e.target.checked) {
+    leaves.style.display = 'flex';
     localStorage.setItem('leavesPreference', 'visible');
   } else {
-    leaves.style.display='none';
+    leaves.style.display = 'none';
     localStorage.setItem('leavesPreference', 'hidden');
   }
 }
 
 const toggleBackground = (e) => {
-  if(e.target.checked){
+  if (e.target.checked) {
     document.body.classList.toggle('bg-remove');
     localStorage.setItem('bgPreference', 'on');
-  }else{
+  } else {
     document.body.classList.remove('bg-remove');
     localStorage.setItem('bgPreference', 'off');
   }
@@ -259,7 +257,7 @@ const pauseVideo = () => {
 };
 
 const turnMusic = (e) => {
-  if(e.target.checked){
+  if (e.target.checked) {
     playVideo();
     localStorage.setItem('musicPreference', 'on');
   } else {
@@ -273,10 +271,12 @@ toggleMusic.addEventListener('change', turnMusic);
 toggleBg.addEventListener('change', toggleBackground);
 
 
-
-
 let refreshBtn = document.querySelector('.refresh-btn')
 
-refreshBtn.addEventListener("click", function() {
+const reload = () => {
   window.location.reload();
+}
+
+refreshBtn.addEventListener("click", function () {
+  reload();
 })
