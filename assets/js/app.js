@@ -208,9 +208,12 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleMusic.checked = true;
     playVideo();
   }
+
   if (musicPreference === 'off') {
     toggleMusic.checked = false;
     pauseVideo();
+  }else{
+    pauseVideo();  
   }
 
   if (bgPreference === 'on') {
