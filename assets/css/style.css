@@ -293,7 +293,7 @@ body.bg-remove{
     height: 350px;
     position: absolute;
     right: 0;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     display: flex;
     flex-direction: column;
 }
@@ -438,9 +438,10 @@ body.bg-remove{
     font-size: 1rem;
 }
 
-.modal-content select:focus{
+.modal-content select:focus, .modal-content input[type="text"]:focus{
     outline: 0;
 }
+
 .modal-content input[type="text"]{
     border-radius: 5px;
     border: 2px solid var(--darker-color);
@@ -454,10 +455,6 @@ body.bg-remove{
     .modal-content input[type="text"], .modal-content select{
         width: 18.5rem !important;
     }
-}
-
-.modal-content input[type="text"]:focus{
-    outline: 0;
 }
 
 .btn-modal, #remove-btn{
@@ -478,7 +475,6 @@ body.bg-remove{
     border-radius: 0px 0px 20px 20px;
     min-height: 300px;
     background-color: var(--lighter-color);
-    /* box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.175); */
 }
 
 /* Ocultando a scrollbar do webkit */
@@ -493,16 +489,6 @@ body.bg-remove{
 .plants-list::-webkit-scrollbar-thumb {
   background-color: var(--medium-color); /* Cor da thumb (parte preenchida) */
   border-radius: 1em; /* Arredondar a borda da thumb */
-}
-
-/* Caso queira ocultar a scrollbar horizontal */
-.plants-list::-webkit-scrollbar.horizontal {
-  display: none;
-}
-
-
-.container-list{
-    margin-top: 20px;
 }
 
 .container-list div{
@@ -685,13 +671,13 @@ iframe{
 @keyframes falling {
     
     0% {
-        -webkit-transform:
+        transform:
             translate3d(300,0,0)
             rotate(0deg);
     }
     
     100% {
-        -webkit-transform:
+        transform:
             translate3d(-350px,700px,0)
             rotate(90deg);
         opacity: 0;
@@ -700,13 +686,13 @@ iframe{
 
 @keyframes falling3 {
      0% {
-        -webkit-transform:
+        transform:
             translate3d(0,0,0)
             rotate(-20deg);
     }
     
     100% {
-        -webkit-transform:
+        transform:
             translate3d(-230px,640px,0)
             rotate(-70deg);
         opacity: 0;
@@ -715,13 +701,13 @@ iframe{
 
 @keyframes falling2 {
      0% {
-        -webkit-transform:
+        transform:
             translate3d(0,0,0)
             rotate(90deg);
     }
     
     100% {
-        -webkit-transform:
+        transform:
             translate3d(-400px,680px,0)
             rotate(0deg);
         opacity: 0;
@@ -759,7 +745,7 @@ iframe{
     width: 20px;
     left: 2px;
     bottom: 2px;
-    background-color: white;
+    background-color: #eee;
     border-radius: 50%;
     transition: 0.4s;
   }
