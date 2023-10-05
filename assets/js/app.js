@@ -188,14 +188,14 @@ let toogleLeaves = document.getElementById('toggle-leaves');
 let leaves = document.getElementById('leaves');
 let toggleMusic = document.getElementById('toggle-music');
 let toggleBg = document.getElementById('toggle-bg');
-
+let toggleFs = document.getElementById('toggle-fs')
 
 // Carregar preferências do localStorage ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
   let leavesPreference = localStorage.getItem('leavesPreference');
   let musicPreference = localStorage.getItem('musicPreference');
   let bgPreference = localStorage.getItem('bgPreference');
-
+  
   if (leavesPreference === 'visible') {
     toogleLeaves.checked = true;
     leaves.style.display = 'flex';
@@ -269,10 +269,46 @@ const turnMusic = (e) => {
   }
 }
 
+
+// Função para ativar a tela cheia
+function enterFullscreen() {
+  const element = document.documentElement; // Elemento raiz da página (geralmente <html>)
+  if (element.requestFullscreen) {
+      element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) { // Para Firefox
+      element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) { // Para Chrome, Safari e Opera
+      element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) { // Para o Internet Explorer
+      element.msRequestFullscreen();
+  }
+}
+
+// Função para sair da tela cheia
+function exitFullscreen() {
+  if (document.exitFullscreen) {
+      document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { // Para Firefox
+      document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { // Para Chrome, Safari e Opera
+      document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { // Para o Internet Explorer
+      document.msExitFullscreen();
+  }
+}
+
+const ToggleFullScreen = (e) => {
+  if (e.target.checked) {
+    enterFullscreen()
+  } else {
+    exitFullscreen();
+  }
+}
+
 toogleLeaves.addEventListener('change', showLeaves);
 toggleMusic.addEventListener('change', turnMusic);
 toggleBg.addEventListener('change', toggleBackground);
-
+toggleFs.addEventListener('change', ToggleFullScreen)
 
 let refreshBtn = document.querySelector('.refresh-btn')
 
