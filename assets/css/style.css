@@ -20,7 +20,7 @@
 }
 
 body{
-    background: url('../bg-nature.jpg') top center no-repeat;
+    background: url('../bg-nature.webp') top center no-repeat;
 }
 
 @media only screen and (min-width: 600px){
