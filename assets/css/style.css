@@ -459,6 +459,23 @@ body.bg-remove{
         align-items: center;
         justify-content: center;
     }
+    .btns{
+        justify-content: flex-end !important;
+    }
+}
+
+@media only screen and (max-width: 360px){
+    .label{
+        margin: 5px !important;
+        min-width: 175px !important;
+    }
+    .label p{
+        margin: 5px 0px 5px 0px !important;
+        width: 50%;
+    }
+    .header-list-inner{
+        justify-content: space-between;
+    }
 }
 
 .btn-modal, #remove-btn{
