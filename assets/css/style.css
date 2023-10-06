@@ -26,6 +26,9 @@ body{
     body{
         overflow: hidden;
     }
+    .btns{
+        justify-content: flex-end !important;
+    }
 }
 
 body.bg-remove{
@@ -95,26 +98,6 @@ body.bg-remove{
     }
 }
 
-
-@media only screen and (max-width: 560px){
-    /* .options svg{
-        width: 40px;
-        height: 25px;
-    } */
-    .add-plant{
-        font-size: 0.9rem !important;
-    }
-    #alt-text{
-        font-size: 1.2rem;
-    }
-    .modal-plant-content h2{
-        font-size: 1.2rem;
-    }
-    .modal-plant-content p{
-        font-size: 0.925rem;
-    }
-}
-
 /* CSS para ocultar o menu-options inicialmente */
 
 #menu-options a{
@@ -172,10 +155,10 @@ body.bg-remove{
 .label{
     margin: 20px;
     width: 50%;
+    min-width: 200px;
 }
 
 .label p{
-    margin-bottom: 5px;
     font-size: 1.2rem;
     color: var(--dark-font);
     margin: 8px 0px 8px 0px;
@@ -220,11 +203,12 @@ body.bg-remove{
 }
 
 .container-list{
-    margin: 10px;
+    margin: 10px 0px 10px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .modal{
@@ -451,9 +435,29 @@ body.bg-remove{
     font-size: 1rem;
 }
 
-@media only screen and (max-width:560px){
-    .modal-content input[type="text"], .modal-content select{
-        width: 18.5rem !important;
+
+/* >> MOBILE STYLE << */
+@media only screen and (max-width:720px){    
+    .add-plant{
+        font-size: 0.9rem !important;
+    }
+    #alt-text{
+        font-size: 1.2rem;
+    }
+    .modal-plant-content h2{
+        font-size: 1.2rem;
+    }
+    .modal-plant-content p{
+        font-size: 0.925rem;
+    }
+    .add-plant p{
+        display: none;
+    }
+    .add-plant{
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -470,7 +474,7 @@ body.bg-remove{
 .plants-list{
     width: 100%;
     overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     max-height: 18.75rem;
     border-radius: 0px 0px 20px 20px;
     min-height: 300px;
@@ -480,6 +484,7 @@ body.bg-remove{
 /* Ocultando a scrollbar do webkit */
 .plants-list::-webkit-scrollbar {
     width: 0.5em; /* Largura da scrollbar */
+    display: none;
 }
 
 .plants-list::-webkit-scrollbar-track {
@@ -492,7 +497,7 @@ body.bg-remove{
 }
 
 .container-list div{
-    width: 100%;
+    width: 95%;
     height: 40px;
     display: flex;
     align-items: center;
@@ -502,6 +507,7 @@ body.bg-remove{
     margin: 3px;
     border-radius: 5px;
     font-size: 1.0rem;
+    border: 2px solid var(--darker-color);
 }
 
 .name-p, .type-p{
@@ -542,35 +548,20 @@ iframe{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
-@media only screen and (max-width: 500px){
-    .header-list{
-        height: 150px;
-        flex-wrap: wrap;
-    }
-    .add-plant{
-        width: 80% !important;
-    }
-    .refresh-btn{
-        width: 20% !important;
-    }
-    .btns{
-        margin: 0px 10px;
-    }
-    .header-list .label{
-        margin: 15px;
-        width: 100%;
-    }
+.header-list-inner{
+    width: 98%;
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
 }
 
 .btns{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
-    height: auto;
+    width: 100%;
 }
 
 
@@ -579,7 +570,6 @@ iframe{
         margin: 3px !important;
     }
 }
-
 
 /* leaf animations */
 
