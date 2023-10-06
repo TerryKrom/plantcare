@@ -1,5 +1,3 @@
-
-
 let toogleLeaves = document.getElementById('toggle-leaves');
 let leaves = document.getElementById('leaves');
 let toggleMusic = document.getElementById('toggle-music');
@@ -62,7 +60,15 @@ const iframe = document.getElementById('video-player');
 const widget = SC.Widget(iframe);
 
 const playVideo = () => {
-  widget.play()
+  widget.bind(SC.Widget.Events.READY, () => {
+    widget.getDuration((duration) => {
+      const musicDuration = parseInt(duration) / 1000; // Converte para segundos
+      const randomPosition = Math.floor(Math.random() * musicDuration); // Gera uma posição aleatória em segundos
+      widget.seekTo(randomPosition * 1000); // Converte de volta para milissegundos e define a posição
+      widget.play(); // Inicia a reprodução
+    });
+  });
+  
 };
 
 const pauseVideo = () => {
